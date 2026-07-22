@@ -1,0 +1,21 @@
+---
+layout: default
+title: Home
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Lab Notes</span>
+    <h1>Notes on movement, models, and infant neurodevelopment.</h1>
+    <p>Writing on computer vision, graph neural networks, and clinical research methodology — from someone building these pipelines in Google Colab, one Spearman rho at a time.</p>
+  </div>
+</section>
+
+<div class="post-list">
+  {% for post in site.posts %}
+  <a class="post-item" href="{{ post.url | relative_url }}">
+    <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</div>
+  </a>
+  {% endfor %}
+</div>
