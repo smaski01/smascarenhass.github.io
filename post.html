@@ -1,0 +1,99 @@
+---
+permalink: /posts/
+title: Posts
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts — S. Mascarenhas</title>
+<meta name="description" content="Notes on computer vision, deep learning, and infant neurodevelopmental research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EEF0EA; --paper-alt: #E4E7DF; --ink: #151E27; --ink-soft: #3C4650;
+    --slate: #67717A; --teal: #1E6F65; --amber: #D98E3F; --line: #C7CDC1; --radius: 3px;
+    --display: 'Instrument Serif', Georgia, serif;
+    --body: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body{ background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  a { color:var(--teal); }
+  a:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom:1px solid var(--line);
+  }
+  .site-nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .site-nav .brand{ font-family:var(--mono); font-size:14px; color:var(--ink); text-decoration:none; font-weight:500; }
+  .site-nav .brand span{ color:var(--teal); }
+  .site-nav nav{ display:flex; gap:28px; }
+  .site-nav nav a{ font-size:14px; color:var(--ink-soft); text-decoration:none; font-weight:500; }
+  .site-nav nav a:hover, .site-nav nav a.active{ color:var(--teal); }
+
+  .page-head{ padding:72px 0 40px; border-bottom:1px solid var(--line); }
+  .page-head .eyebrow{ font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); }
+  .page-head h1{ font-family:var(--display); font-weight:400; font-size:clamp(36px,5vw,52px); margin-top:12px; }
+  .page-head p{ margin-top:14px; color:var(--ink-soft); font-size:17px; max-width:56ch; }
+
+  .post-list{ padding:24px 0 80px; }
+  .post-item{ display:block; text-decoration:none; padding:28px 0; border-bottom:1px solid var(--line); }
+  .post-item:hover .post-title{ color:var(--teal); }
+  .post-item .post-date{ font-family:var(--mono); font-size:12px; color:var(--slate); text-transform:uppercase; letter-spacing:0.05em; }
+  .post-item .post-title{ font-family:var(--display); font-size:26px; color:var(--ink); margin-top:6px; }
+  .post-item .post-excerpt{ margin-top:8px; color:var(--ink-soft); font-size:15px; max-width:70ch; }
+  .empty-state{ padding:40px 0; color:var(--slate); font-family:var(--mono); font-size:14px; }
+
+  footer{ padding:28px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--slate); background:var(--ink); }
+  footer .wrap{ color:var(--paper); border-top:1px solid #3A454E; padding-top:20px; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a href="/" class="brand">S. MASCARENHAS <span>·</span> NDD LAB</a>
+    <nav>
+      <a href="/#about">About</a>
+      <a href="/#research">Research</a>
+      <a href="/#methods">Methods</a>
+      <a href="/posts/" class="active">Posts</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Lab Notes</span>
+    <h1>Writing on movement, models, and method.</h1>
+    <p>Notes from the pipelines — statistical fixes, architecture decisions, and what's changed between versions.</p>
+  </div>
+</section>
+
+<div class="wrap post-list">
+  {% for post in site.posts %}
+  <a class="post-item" href="{{ post.url | relative_url }}">
+    <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</div>
+  </a>
+  {% else %}
+  <div class="empty-state">No posts yet — add a file to <code>_posts/</code> to get started.</div>
+  {% endfor %}
+</div>
+
+<footer>
+  <div class="wrap">© 2026 S. Mascarenhas · <a href="https://github.com/smascarenhas">GitHub</a></div>
+</footer>
+
+</body>
+</html>
