@@ -47,7 +47,6 @@
 
   .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
 
-  /* ---------- NAV ---------- */
   header.site-nav{
     position:sticky; top:0; z-index:50;
     background:color-mix(in srgb, var(--paper) 88%, transparent);
@@ -69,7 +68,6 @@
   }
   .site-nav nav a:hover{ color:var(--teal); }
 
-  /* ---------- HERO ---------- */
   .hero{
     position:relative;
     padding:96px 0 80px;
@@ -127,7 +125,6 @@
     .graph-stage{ height:260px; order:-1; }
   }
 
-  /* ---------- SECTION GENERIC ---------- */
   section{ padding:76px 0; border-bottom:1px solid var(--line); }
   section:last-of-type{ border-bottom:none; }
   .section-head{ margin-bottom:44px; max-width:60ch; }
@@ -143,7 +140,6 @@
   .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
-  /* ---------- ABOUT ---------- */
   .about-grid{ display:grid; grid-template-columns: 1fr 280px; gap:48px; }
   .about-grid p{ color:var(--ink-soft); font-size:16px; margin-bottom:16px; max-width:62ch; }
   .about-grid p strong{ color:var(--ink); font-weight:600; }
@@ -153,7 +149,6 @@
   .facts dd{ font-size:15px; color:var(--ink); margin-top:4px; }
   @media (max-width:760px){ .about-grid{ grid-template-columns:1fr; } .facts{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:20px; } }
 
-  /* ---------- RESEARCH CARDS ---------- */
   .card-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
   .card{
     background:var(--paper); padding:32px 28px; display:flex; flex-direction:column;
@@ -173,14 +168,12 @@
   .card .metric b{ color:var(--teal); font-weight:500; }
   @media (max-width:860px){ .card-grid{ grid-template-columns:1fr; } }
 
-  /* ---------- METHODS / TOOLS ---------- */
   .tool-cloud{ display:flex; flex-wrap:wrap; gap:10px; }
   .tool-cloud span{
     font-family:var(--mono); font-size:13px; padding:7px 14px; border:1px solid var(--line);
     border-radius:999px; color:var(--ink-soft); background:var(--paper-alt);
   }
 
-  /* ---------- CONTACT ---------- */
   .contact-band{ background:var(--ink); color:var(--paper); border-bottom:none; }
   .contact-band .section-head h2{ color:var(--paper); }
   .contact-band .section-head p{ color:#B9C0C6; }
@@ -224,7 +217,6 @@
     </div>
     <div class="graph-stage" aria-hidden="true">
       <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg">
-        <!-- 21-joint pose graph, styled as the paper's skeleton graph -->
         <g id="edges" stroke="var(--teal)">
           <path class="graph-edge" style="animation-delay:.05s" d="M160,40 L160,90"/>
           <path class="graph-edge" style="animation-delay:.10s" d="M160,90 L110,110"/>
@@ -281,7 +273,7 @@
       <div class="reveal">
         <p>I work at the intersection of <strong>computer vision, deep learning, and clinical assessment</strong>, building tools that detect early markers of neurodevelopmental disorders from infant video. The core idea across my projects: pose and movement, extracted at the joint level, can be mapped onto established clinical frameworks — General Movement Assessment (Prechtl), HINE, and AIMS — rather than treated as an opaque classification target.</p>
         <p>Recent work focuses on getting the <strong>statistics right</strong>, not just the architecture: correcting spurious correlations on small validation sets, moving to leave-one-out cross-validation where sample sizes demand it, and checking inter-rater agreement before multi-reviewer clinical scores are ever averaged together.</p>
-        <p>Based in Tamil Nadu, India — building primarily in Google Colab, with an eye toward IEEE and journal publication.</p>
+        <p>Based in Tiruchirappalli, Tamil Nadu, India — building primarily in Google Colab, with an eye toward IEEE and journal publication.</p>
       </div>
       <dl class="facts reveal">
         <dt>Focus areas</dt>
@@ -362,10 +354,10 @@
       <p>Particularly interested in connections across the neuroimaging and pediatric neuroscience community in India.</p>
     </div>
     <div class="contact-list reveal">
-      <a href="mailto:your.steolams2@gmail.com">your.example@gmail.com</a>
+      <a href="mailto:sfdsafas@gmail.com?subject=Research%20Inquiry&body=Hi%2C%0A%0AI%27d%20like%20to%20connect%20regarding%20your%20research%20on%20infant%20neurodevelopmental%20disorder%20detection.%0A%0A">sfdsafas@gmail.com</a>
       <a href="https://github.com/smascarenhas">github.com/smascarenhas</a>
       <a href="https://scholar.google.com">Google Scholar</a>
-      <a href="https://linkedin.com">Linexample
+      <a href="https://linkedin.com">LinkedIn</a>
     </div>
   </div>
 </section>
@@ -375,7 +367,6 @@
 </footer>
 
 <script>
-  // Scroll-reveal for sections
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
